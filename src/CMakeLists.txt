@@ -1,0 +1,45 @@
+add_subdirectory(contrib)
+
+list (APPEND fieldlines_sources
+	${CMAKE_CURRENT_SOURCE_DIR}/backspace_out.f90
+	${CMAKE_CURRENT_SOURCE_DIR}/drkhvg.f90
+	${CMAKE_CURRENT_SOURCE_DIR}/faxis_nag.f90
+	${CMAKE_CURRENT_SOURCE_DIR}/fblin_lsode.f90
+	${CMAKE_CURRENT_SOURCE_DIR}/fblin_nag.f90
+	${CMAKE_CURRENT_SOURCE_DIR}/fblin_rkh68.f90
+	${CMAKE_CURRENT_SOURCE_DIR}/fblin_tanmap_lsode.f90
+	${CMAKE_CURRENT_SOURCE_DIR}/fblin_tanmap_nag.f90
+	${CMAKE_CURRENT_SOURCE_DIR}/fblin_tanmap_rkh68.f90
+	${CMAKE_CURRENT_SOURCE_DIR}/fieldlines_find_axis.f90
+	${CMAKE_CURRENT_SOURCE_DIR}/fieldlines_find_hc.f90
+	${CMAKE_CURRENT_SOURCE_DIR}/fieldlines_follow.f90
+	${CMAKE_CURRENT_SOURCE_DIR}/fieldlines_grid.f90
+	${CMAKE_CURRENT_SOURCE_DIR}/fieldlines_init_coil.f90
+	${CMAKE_CURRENT_SOURCE_DIR}/fieldlines_init.f90
+	${CMAKE_CURRENT_SOURCE_DIR}/fieldlines_init_I.f90
+	${CMAKE_CURRENT_SOURCE_DIR}/fieldlines_init_mgrid.f90
+	${CMAKE_CURRENT_SOURCE_DIR}/fieldlines_init_nescoil.f90
+	${CMAKE_CURRENT_SOURCE_DIR}/fieldlines_init_restart.f90
+	${CMAKE_CURRENT_SOURCE_DIR}/fieldlines_init_subgrid.f90
+	${CMAKE_CURRENT_SOURCE_DIR}/fieldlines_init_vmec_edgestart.f90
+	${CMAKE_CURRENT_SOURCE_DIR}/fieldlines_init_vmec.f90
+	${CMAKE_CURRENT_SOURCE_DIR}/fieldlines_input_mod.f90
+	${CMAKE_CURRENT_SOURCE_DIR}/fieldlines_lines.f90
+	${CMAKE_CURRENT_SOURCE_DIR}/fieldlines_main.f90
+	${CMAKE_CURRENT_SOURCE_DIR}/fieldlines_runtime.f90
+	${CMAKE_CURRENT_SOURCE_DIR}/fieldlines_write_emc3.f90
+	${CMAKE_CURRENT_SOURCE_DIR}/fieldlines_write.f90
+	${CMAKE_CURRENT_SOURCE_DIR}/fieldlines_write_parhdf5.f90
+	${CMAKE_CURRENT_SOURCE_DIR}/fmap_nag.f90
+	${CMAKE_CURRENT_SOURCE_DIR}/follow_single.f90
+	${CMAKE_CURRENT_SOURCE_DIR}/FZERO.f
+	${CMAKE_CURRENT_SOURCE_DIR}/jacobian_lsode.f90
+	${CMAKE_CURRENT_SOURCE_DIR}/jacobian_tanmap_lsode.f90
+	${CMAKE_CURRENT_SOURCE_DIR}/Map_v.f
+	${CMAKE_CURRENT_SOURCE_DIR}/monit_find_axis.f90
+	${CMAKE_CURRENT_SOURCE_DIR}/normal_vector.f
+	${CMAKE_CURRENT_SOURCE_DIR}/out_fieldlines_nag.f90
+	${CMAKE_CURRENT_SOURCE_DIR}/random.f90
+	${CMAKE_CURRENT_SOURCE_DIR}/scaleup_boundary.f90
+)
+set (fieldlines_sources "${fieldlines_sources}" PARENT_SCOPE)
