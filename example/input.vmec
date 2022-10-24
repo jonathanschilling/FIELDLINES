@@ -1,0 +1,83 @@
+&INDATA
+
+! VMEC Execution parameters.
+  DELT = 1.0
+  TCON0 = 2.0
+  NTOR = 6
+  MPOL = 6
+  NS_ARRAY = 15
+  FTOL_ARRAY = 1.0E-9
+  NITER_ARRAY = 100000
+  NSTEP = 200
+  NVACSKIP = 6
+  LASYM = F
+  LFORBAL = F
+
+  NZETA = 36
+  NFP = 5
+
+! Plasma current parameters.
+  NCURR = 1
+  PCURR_TYPE = 'sum_atan'
+  CURTOR = 5000.0
+  AC = 0, 1, 1, 1.5, 1
+
+! Plasma pressure parameters
+  SPRES_PED = 1.0
+  pmass_type = 'two_Lorentz'
+  PRES_SCALE = 50000.0
+  AM = 1, 1, 1, 1, 1, 1, 1, 1
+
+! Fitting parameters.
+  gamma = 0.0
+  PHIEDGE = -1.6
+  BLOAT = 1.0
+
+! Vacuum Fields.
+  MGRID_FILE = 'mgrid_w7x_v2_10mm_grid.nc'
+
+! Initial Position.
+  RAXIS_CC = 5.521  0.279
+  ZAXIS_CS = 0.0   -0.235
+  RBC(0,0) = 5.5210E+00
+  RBC(1,0) = 2.7849e-01
+  RBC(0,1) = 4.8900E-01
+  ZBS(0,0) = 0.0000E+00
+  ZBS(1,0) = -2.3504e-01
+  ZBS(0,1) = 6.2496E-01
+
+  EXTCUR( 1) =  1.28700e+04 ! AAE10_SC
+  EXTCUR( 2) =  1.31220e+04 ! AAE29_SC
+  EXTCUR( 3) =  1.38960e+04 ! AAE38_SC
+  EXTCUR( 4) =  1.19640e+04 ! AAE47_SC
+  EXTCUR( 5) =  1.08440e+04 ! AAE56_SC
+  EXTCUR( 6) = -1.00000e+00 ! AAE14_SC
+  EXTCUR( 7) = -1.00000e+00 ! AAE23_SC
+/
+
+&FIELDLINES_INPUT
+ NR = 211                          ! Number of radial gridpoints
+ NPHI = 37                         ! Number of toroidal gridpoints
+ NZ = 241                          ! Number of vertical gridpoints
+ RMIN = 4.3                        ! Minimum extent of radial grid
+ RMAX = 6.4                        ! Maximum extent of radial grid
+ ZMIN = -1.2                       ! Minimum extent of vertical grid
+ ZMAX = 1.2                        ! Maximum extent of vertical grid
+ PHIMIN = 0.0                      ! Minimum extent of toroidal grid, overridden by mgrid or coils file
+! PHIMAX = 0.628                    ! Maximum extent of toroidal grid, overridden by mgrid or coils file
+ MU = 0.0                          ! Fieldline diffusion (mu=D/v) [m^2/m]
+ R_START   =    5.95   6.0    6.05  ! Radial starting locations of fieldlines
+ Z_START   =    0.0    0.0    0.0  ! Vertical starting locations of fieldlines
+ PHI_START =    0.0    0.0    0.0  ! Toroidal starting locations of fieldlines (radians)
+ PHI_END   =  629.0  629.0  629.0  ! Maximum distance in toroidal direction to follow fieldlines
+ NPOINC = 72                       ! Number of toroidal points per-period to output the field line trajectory
+ INT_TYPE = 'LSODE'                ! Fieldline integration method (NAG, RKH68, LSODE)
+ FOLLOW_TOL = 1.0E-12              ! Fieldline following tollerance
+ VC_ADAPT_TOL = 1.0E-7             ! Virtual casing tolerance (if using plasma field from equilibria)
+ R_HC = 3.5                        ! R Location of periodic orbit (-full)
+ Z_HC = 0.5                        ! Z Location guess for periodic orbit (-full)
+ PHI_HC = 0.0                      ! PHI Location for periodic orbit(-full)
+ NUM_HCP = 512                     ! Number of points for separatrix plot (-full)
+ DELTA_HC = 1.0E-4                 ! Initial length of separatrix line (-full)
+/
+&END

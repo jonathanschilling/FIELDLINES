@@ -1,0 +1,6 @@
+- make.inc is actually needed --> put node-specific line into it; do not force-link it
+- need to set STELLOPT_PATH envvar to path to cloned STELLOPT source tree
+- call via build_all script
+
+--> resulting call to build e.g. FIELDLINES:
+STELLOPT_PATH=/data2/jonathan/work/code/STELLOPT ./build_all -j 8 clean_release fieldlines
